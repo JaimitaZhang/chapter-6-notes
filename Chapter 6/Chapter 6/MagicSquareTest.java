@@ -24,38 +24,7 @@ public class MagicSquareTest {
       MagicSquare squares = new MagicSquare(square); 
       MagicSquare squares1 = new MagicSquare(square1); 
       MagicSquare squares2 = new MagicSquare(square2); 
-      squares.addRow(0);
-      squares.addRow(1);
-      squares.addRow(2);
-      squares.addRow(3);
-      squares.addColumns(0);
-      squares.addColumns(1);
-      squares.addColumns(2);
-      squares.addColumns(3);
-      squares.addDiagonals();
-      
-      
-      squares1.addRow(0);
-      squares1.addRow(1);
-      squares1.addRow(2);
-      squares1.addColumns(0);
-      squares1.addColumns(1);
-      squares1.addColumns(2);
-      squares1.addDiagonals();
-      
-      squares2.addRow(0);
-      squares2.addRow(1);
-      squares2.addRow(2);
-      squares2.addRow(3);
-      squares2.addRow(4);
-      squares2.addColumns(0);
-      squares2.addColumns(1);
-      squares2.addColumns(2);
-      squares2.addColumns(3);
-      squares2.addColumns(4);
-      squares2.addDiagonals();
-      
-     
+    
       squares.printArray();
       if (squares.isMagic())
          System.out.println("It's MAGIC!! With a sum of "+squares.getMagicNum());

@@ -12,16 +12,14 @@ public class MagicSquare {
     public MagicSquare(int [][]array1)
     {rowcount = 0;
      colcount = 0;
-     magicnum=0;
+     magicnum = 0;
      array=array1;
      for (int i = 0; i<array.length; i++)
           magicnum+=array[0][i];
     }
     
     public boolean isMagic () 
-    { addRows();
-      addColumns();
-      addDiagonals();
+    {flag=0; 
       for (int i = 0; i<rows.length; i++)
         {if (rows[i]!=magicnum)
             flag++;}
@@ -30,10 +28,8 @@ public class MagicSquare {
         {if (columns[i]!=magicnum)
             flag++;}      
             
-      for (int i = 0; i<diagonals.length; i++)
-        {if (diagonals[i]!=magicnum)
-            flag++;}
-            
+      if (dsum!=magicnum || dsum1!=magicnum)
+        flag++ ;
             
       if (flag!=0)
         return false; 
@@ -45,46 +41,45 @@ public class MagicSquare {
     public int getMagicNum() 
         {return magicnum;}
     
-    public void addRow(int row)
+    public int addRow(int row)
         {rowsum=0;
          for (int i = 0; i<array.length; i++)
             rowsum+=array[row][i];
-         rows[rowcount]=rowsum;
-         rowcount++; 
+         return rowsum;
         }
     
     public int [] addRows()
-    {return rows; 
+    {    rows[rowcount]=rowsum;
+         rowcount++; 
+         return rows; 
     }
     
-    public void addColumns(int col)
+    public int addColumns(int col)
         {columnsum=0;
         for (int i = 0; i<array[0].length; i++)
             columnsum+=array[i][col];
-        columns[colcount]=columnsum; 
-        colcount++;
+        return columnsum; 
         }
         
     public int [] addColumns()
-    {return columns; 
+    {columns[colcount]=columnsum; 
+     colcount++;
+     return columns; 
     }
     
-    public void addDiagonals()
+    public int addDiagonals1()
         {dsum=0;
        for(int i = 0; i<array.length;i++)
             dsum+=array[i][i];
-       diagonals[0]=dsum; 
-            
+       return dsum; }
+    
+    public int addDiagonals2 (){
        dsum1=0;
        for(int i = 0; i<array.length;i++)
             dsum1+=array[i][array.length-i-1];
-       diagonals[1]=dsum1; 
-       
+       return dsum1; 
        }
        
-    public int [] diagonals ()
-    {return diagonals; 
-    }
     
     public void printArray()
     {for (int i=0; i<array.length; i++)
