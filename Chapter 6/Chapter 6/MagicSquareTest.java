@@ -1,4 +1,3 @@
- 
 import java.text.DecimalFormat; 
 import java.text.NumberFormat;
 import javax.swing.*; 
@@ -8,6 +7,7 @@ public class MagicSquareTest {
     public static void main (String[] args)
      {
      
+      //creates magic square 2d arrays   
       int [][] square = { {16,3,2,13},
                           {5,10,11,8}, 
                           {9,6,7,12}, 
@@ -21,25 +21,36 @@ public class MagicSquareTest {
                            {10,18,1,14,22}, 
                            {23,6,19,2,15}  };
       
+      //creates magicsqure object of first array above
       MagicSquare squares = new MagicSquare(square); 
-      MagicSquare squares1 = new MagicSquare(square1); 
-      MagicSquare squares2 = new MagicSquare(square2); 
-    
-      squares.printArray();
+      //calls toString, prints array 
+      System.out.println(squares);
+     
+      //tests if square is magic square (it is!)
       if (squares.isMagic())
          System.out.println("It's MAGIC!! With a sum of "+squares.getMagicNum());
       else
          System.out.println("This is not a magic square");
       System.out.println();
+      
+      //creates magicsquare object of second array
+      MagicSquare squares1 = new MagicSquare(square1); 
+      //prints array
+      System.out.println(squares1);
 
-      squares1.printArray();
+      //tests to see if square is magic (it is not)
       if (squares1.isMagic())
          System.out.println("It's MAGIC!! With a sum of "+squares1.getMagicNum());
       else
          System.out.println("This is not a magic square");
       System.out.println();
-      
-      squares2.printArray();
+       
+      //creates magicsquare object of third array
+      MagicSquare squares2 = new MagicSquare(square2); 
+      //prints array
+      System.out.println(squares2);
+
+      //tests to see if square is magic (it is!)
       if (squares2.isMagic())
          System.out.println("It's MAGIC!! With a sum of "+squares2.getMagicNum());
       else
